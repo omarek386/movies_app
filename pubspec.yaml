@@ -15,7 +15,7 @@ dependencies:
   easy_localization:
   intl:
   equatable:
-  get_it:
+  get_it: ^8.0.3
   cached_network_image:
   flutter_screenutil:
   flutter_animate:
@@ -30,6 +30,8 @@ dependencies:
   dartz:
   flutter_svg:
   cupertino_icons:
+  firebase_core: ^3.15.1
+  firebase_auth: ^5.6.2
 
 dev_dependencies:
   flutter_test:
