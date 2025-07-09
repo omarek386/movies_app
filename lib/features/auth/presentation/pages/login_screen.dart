@@ -7,6 +7,7 @@ import 'package:movies_app/core/extensions/sizedbox_extensions.dart';
 import 'package:movies_app/features/auth/presentation/widgets/auth_title_widget.dart';
 import 'package:movies_app/features/auth/presentation/widgets/named_text_form_field.dart';
 import 'package:movies_app/features/auth/presentation/widgets/secure_named_text_form_field.dart';
+import 'package:stylish_dialog/stylish_dialog.dart';
 
 import '../../../../core/routing/routes.dart';
 import '../cubit/auth_cubit.dart';
@@ -37,12 +38,24 @@ class _LoginScreenState extends State<LoginScreen> {
       body: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is AuthFailure) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.error)),
-            );
+            StylishDialog(
+              context: context,
+              alertType: StylishDialogType.ERROR,
+              title: const Text('Error'),
+              content: Text(state.error),
+            ).show();
           }
           if (state is AuthSignInSuccess) {
-            context.pushReplacementNamed(Routes.homeScreen);
+            StylishDialog(
+              context: context,
+              alertType: StylishDialogType.SUCCESS,
+              title: const Text('Success'),
+              content: const Text('Login successful!'),
+            ).show();
+            Future.delayed(const Duration(seconds: 2), () {
+              // ignore: use_build_context_synchronously
+              context.pushReplacementNamed(Routes.homeScreen);
+            });
           }
         },
         builder: (context, state) {

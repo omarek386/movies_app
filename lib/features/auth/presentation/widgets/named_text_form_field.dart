@@ -7,15 +7,18 @@ class NamedTextFormField extends StatelessWidget {
   const NamedTextFormField({
     super.key,
     required TextEditingController emailController,
-    String emailLabel = 'Email',
+    String label = 'Email',
     String? Function(String?)? validator = emailValidator,
+    TextInputType keyboardType = TextInputType.emailAddress,
   })  : _emailController = emailController,
         _validator = validator,
-        _emailLabel = emailLabel;
+        _emailLabel = label,
+        _keyboardType = keyboardType;
 
   final TextEditingController _emailController;
   final String? Function(String?)? _validator;
   final String _emailLabel;
+  final TextInputType _keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class NamedTextFormField extends StatelessWidget {
         verticalSpace(8),
         TextFormField(
           style: const TextStyle(color: Colors.white),
-          keyboardType: TextInputType.emailAddress,
+          keyboardType: _keyboardType,
           controller: _emailController,
           validator: _validator,
         ),

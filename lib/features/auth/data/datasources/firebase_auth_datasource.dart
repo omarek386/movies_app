@@ -57,10 +57,19 @@ class FirebaseAuthDatasource implements AuthRemoteDataSource {
     try {
       return await _firebaseAuth
           .signInWithEmailAndPassword(
-            email: email,
-            password: password,
-          )
-          .then((user) => Right(user));
+        email: email,
+        password: password,
+      )
+          .then((user) {
+        if (user.user?.emailVerified == false) {
+          return Left(
+            ServerFailure(
+              'Please verify your email before signing in',
+            ),
+          );
+        }
+        return Right(user);
+      });
     } on FirebaseAuthException catch (e) {
       return Left(
         ServerFailure(

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/services/service_locator.dart';
@@ -30,7 +31,16 @@ class AppRouter {
         ));
 
       default:
-        return null;
+        return MaterialPageRoute(
+          builder: (context) => Scaffold(
+            body: Center(
+              child: Text(
+                'No route defined ${settings.name} ${FirebaseAuth.instance.currentUser?.displayName},',
+                style: const TextStyle(fontSize: 20, color: Colors.red),
+              ),
+            ),
+          ),
+        );
     }
   }
 
