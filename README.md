@@ -9,15 +9,43 @@ Omar Khalifa
 
 ## 📸 Screenshots
 
-|                  Splash Screen                  |                    Onboarding                    |                 Login Screen                  |
-| :---------------------------------------------: | :----------------------------------------------: | :-------------------------------------------: |
-| ![Splash Screen](screenshots/splash_screen.png) | ![Onboarding](screenshots/onboarding_screen.png) | ![Login Screen](screenshots/login_screen.png) |
+<table>
+  <tr>
+    <th align="center">Splash Screen</th>
+    <th align="center">Onboarding</th>
+    <th align="center">Login Screen</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/splash-screen-link" width="200" height="400" alt="Splash Screen"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/43e11c26-da9a-4572-b96f-2f6e151f5e01" width="200" height="400" alt="Onboarding"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/c51b2be4-5859-491e-a9c0-413e3074d860" width="200" height="400" alt="Login Screen"/>
+    </td>
+  </tr>
+</table>
 
-|                  Sign Up Screen                  |                 Home Screen                 |                  Movie Details                  |
-| :----------------------------------------------: | :-----------------------------------------: | :---------------------------------------------: |
-| ![Sign Up Screen](screenshots/signup_screen.png) | ![Home Screen](screenshots/home_screen.png) | ![Movie Details](screenshots/movie_details.png) |
-
-> **📌 Note**: Please add your app screenshots to the `screenshots/` folder in the root directory. Recommended dimensions: 250x500 pixels (or maintain a 1:2 aspect ratio) for optimal display.
+<table>
+  <tr>
+    <th align="center">Sign Up Screen</th>
+    <th align="center">Home Screen</th>
+    <th align="center">Movie Details</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e09e3272-86a4-4975-8dad-0db04f8ccdc3" width="200" height="400" alt="Sign Up Screen"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/home-screen-link" width="200" height="400" alt="Home Screen"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/movie-details-link" width="200" height="400" alt="Movie Details"/>
+    </td>
+  </tr>
+</table>
 
 ## ✨ Features
 
@@ -54,45 +82,44 @@ Omar Khalifa
 
 This project follows **Clean Architecture** principles with the following structure:
 
-```text
+```
 movies_app/
 ├── lib/
-│   ├── core/                     # Shared functionality
-│   │   ├── constants/           # App constants and configurations
-│   │   ├── cubit/              # Global state management (Theme, Locale)
-│   │   ├── errors/             # Error handling and exceptions
-│   │   ├── extensions/         # Dart extensions for utilities
-│   │   ├── network/            # HTTP client and API services
-│   │   ├── routing/            # App navigation and routes
-│   │   ├── services/           # External services integration
-│   │   ├── theme/              # App theming and styling
-│   │   └── utils/              # Utility functions and helpers
-│   ├── features/                # Feature modules
-│   │   ├── splash/             # Splash screen feature
-│   │   ├── onboarding/         # Onboarding flow feature
-│   │   └── auth/               # Authentication feature
-│   │       ├── data/           # Data layer (repositories, data sources)
-│   │       ├── domain/         # Domain layer (entities, use cases)
-│   │       └── presentation/   # Presentation layer (pages, widgets, BLoC)
-│   ├── app.dart                # Main app widget configuration
-│   ├── main.dart               # App entry point
-│   ├── app_bloc_observer.dart  # BLoC observer for debugging
-│   └── firebase_options.dart   # Firebase configuration
-├── assets/                      # App assets
-│   ├── icons/                  # App icons
-│   ├── images/                 # Image resources
-│   ├── lang/                   # Localization files (en.json, ar.json)
-│   └── lottie/                 # Lottie animation files
-├── android/                    # Android-specific files
-├── ios/                        # iOS-specific files
-├── web/                        # Web-specific files
-├── windows/                    # Windows-specific files
-├── macos/                      # macOS-specific files
-├── linux/                      # Linux-specific files
-├── screenshots/                # App screenshots for README
-├── test/                       # Unit and widget tests
-├── pubspec.yaml               # Dependencies and project configuration
-└── README.md                  # Project documentation
+│   ├── core/                    # Shared functionality
+│   │   ├── constants/          # App constants and configurations
+│   │   ├── cubit/             # Global state management (Theme, Locale)
+│   │   ├── errors/            # Error handling and exceptions
+│   │   ├── extensions/        # Dart extensions for utilities
+│   │   ├── network/           # HTTP client and API services
+│   │   ├── routing/           # App navigation and routes
+│   │   ├── services/          # External services integration
+│   │   ├── theme/             # App theming and styling
+│   │   └── utils/             # Utility functions and helpers
+│   ├── features/               # Feature modules
+│   │   ├── splash/            # Splash screen feature
+│   │   ├── onboarding/        # Onboarding flow feature
+│   │   └── auth/              # Authentication feature
+│   │       ├── data/          # Data layer (repositories, data sources)
+│   │       ├── domain/        # Domain layer (entities, use cases)
+│   │       └── presentation/  # Presentation layer (pages, widgets, BLoC)
+│   ├── app.dart               # Main app widget configuration
+│   ├── main.dart              # App entry point
+│   ├── app_bloc_observer.dart # BLoC observer for debugging
+│   └── firebase_options.dart  # Firebase configuration
+├── assets/                     # App assets
+│   ├── icons/                 # App icons
+│   ├── images/                # Image resources
+│   ├── lang/                  # Localization files (en.json, ar.json)
+│   └── lottie/                # Lottie animation files
+├── android/                   # Android-specific files
+├── ios/                       # iOS-specific files
+├── web/                       # Web-specific files
+├── windows/                   # Windows-specific files
+├── macos/                     # macOS-specific files
+├── linux/                     # Linux-specific files
+├── test/                      # Unit and widget tests
+├── pubspec.yaml              # Dependencies and project configuration
+└── README.md                 # Project documentation
 ```
 
 ## 🛠️ Tech Stack
