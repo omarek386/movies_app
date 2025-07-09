@@ -143,7 +143,7 @@ The app includes both light and dark themes with dynamic theme switching functio
 
 ## 📄 License
 
-This project is created by **Abdalluh Essam** as a demonstration of Flutter Clean Architecture.
+This project is a demonstration of Flutter Clean Architecture.
 
 ## 🤝 Contributing
 

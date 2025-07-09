@@ -17,7 +17,7 @@ class AuthCubit extends Cubit<AuthState> {
   final ResetPasswordUsecase _resetPasswordUsecase;
   final VerifyEmailUsecase _verifyEmailUsecase;
 
-  Future<void> signIn(String email, String password) async {
+  Future<void> logIn({required String email, required String password}) async {
     emit(AuthLoading());
     _signInUsecase.call(email, password).then((value) {
       value.fold(

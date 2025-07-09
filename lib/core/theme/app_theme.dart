@@ -23,6 +23,10 @@ class AppTheme {
             borderRadius: BorderRadius.circular(30.r),
             borderSide: BorderSide.none,
           ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.r),
+            borderSide: const BorderSide(color: Colors.red),
+          ),
         ),
       );
 

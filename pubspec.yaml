@@ -1,5 +1,5 @@
 name: movies_app
-description: A new Flutter project with Clean Architecture by Abdalluh Essam
+description: A new Flutter project with Clean Architecture
 # Flutter version on machine: 3.32.2
 publish_to: "none"
 
@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons:
   firebase_core: ^3.15.1
   firebase_auth: ^5.6.2
+  modal_progress_hud_nsn: ^0.5.1
 
 dev_dependencies:
   flutter_test:

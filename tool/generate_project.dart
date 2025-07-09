@@ -52,8 +52,9 @@ Future<void> _generateLocalizationFiles(Directory projectDir) async {
 Future<void> _generateReadme(Directory projectDir, String projectName) async {
   final readmeFile = File(join(projectDir.path, 'README.md'));
   await readmeFile.writeAsString('''
-Hello Created By Abdalluh Essam 🇪🇬🇪🇬🇪
-abdallhesam100@gmail.com
+# $projectName
+
+A new Flutter project with Clean Architecture.
 
 
 
@@ -102,8 +103,6 @@ flutter run
 
 ✅ Built with ❤️ using the Clean Architecture Generator
 
-
-Hello Created By Abdalluh Essam 🇪🇬🇪🇬🇪
 ''');
 }
 
@@ -230,7 +229,7 @@ Future<void> _generatePubspecYaml(
 
   final pubspecContent = '''
 name: $projectName
-description: A new Flutter project with Clean Architecture by Abdalluh Essam
+description: A new Flutter project with Clean Architecture
 # Flutter version on machine: $flutterVersion
 publish_to: 'none'
 

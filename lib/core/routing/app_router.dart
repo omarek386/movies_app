@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies_app/core/services/service_locator.dart';
+import 'package:movies_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:movies_app/features/auth/presentation/pages/auth_home_page.dart';
 import '../../features/auth/presentation/pages/login_screen.dart';
 import '../../features/auth/presentation/pages/sign_up_screen.dart';
@@ -16,9 +19,15 @@ class AppRouter {
       case Routes.authHomeScreen:
         return _createRoute(const AuthHomeScreen());
       case Routes.loginScreen:
-        return _createRoute(const LoginScreen());
+        return _createRoute(BlocProvider(
+          create: (context) => AuthCubit(sl(), sl(), sl(), sl()),
+          child: const LoginScreen(),
+        ));
       case Routes.signupScreen:
-        return _createRoute(const SignUpScreen());
+        return _createRoute(BlocProvider(
+          create: (context) => AuthCubit(sl(), sl(), sl(), sl()),
+          child: const SignUpScreen(),
+        ));
 
       default:
         return null;
