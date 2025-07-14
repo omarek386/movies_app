@@ -14,13 +14,21 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase asynchronously
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   await EasyLocalization.ensureInitialized();
   Bloc.observer = AppBlocObserver();
+
+  // Initialize shared preferences asynchronously
   await AppPreferences().init();
-  setup(); // Initialize service locator
+
+  // Initialize service locator
+  setup();
+
   runApp(EasyLocalization(
     supportedLocales: AppConstants.supportedLocales,
     path: 'assets/lang',

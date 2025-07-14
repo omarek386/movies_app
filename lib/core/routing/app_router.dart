@@ -4,8 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/services/service_locator.dart';
 import 'package:movies_app/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:movies_app/features/auth/presentation/pages/auth_home_page.dart';
+import 'package:movies_app/features/weather/presentation/cubit/weather_cubit.dart';
+import 'package:movies_app/features/weather/presentation/pages/home_screen.dart';
 import '../../features/auth/presentation/pages/login_screen.dart';
 import '../../features/auth/presentation/pages/sign_up_screen.dart';
+import '../../features/weather/presentation/pages/search_screen.dart';
 import '../routing/routes.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
@@ -28,6 +31,19 @@ class AppRouter {
         return _createRoute(BlocProvider(
           create: (context) => AuthCubit(sl(), sl(), sl(), sl()),
           child: const SignUpScreen(),
+        ));
+      case Routes.homeScreen:
+        final location = settings.arguments as String?;
+        return _createRoute(BlocProvider(
+          create: (context) => WeatherCubit(sl(), sl()),
+          child: HomeScreen(
+            location: location,
+          ),
+        ));
+      case Routes.searchScreen:
+        return _createRoute(BlocProvider(
+          create: (context) => WeatherCubit(sl(), sl()),
+          child: const SearchScreen(),
         ));
 
       default:

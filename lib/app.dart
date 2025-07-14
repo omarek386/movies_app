@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/routing/routes.dart';
+import 'package:movies_app/core/services/service_locator.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routing/app_router.dart';
 import 'core/constants/app_constants.dart';
@@ -29,7 +31,9 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           localizationsDelegates: context.localizationDelegates,
           onGenerateRoute: appRouter.generateRoute,
-          initialRoute: Routes.authHomeScreen,
+          initialRoute: sl<FirebaseAuth>().currentUser == null
+              ? Routes.authHomeScreen
+              : Routes.homeScreen,
         ),
       ),
     );
