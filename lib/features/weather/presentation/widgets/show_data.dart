@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:movies_app/features/weather/data/models/subModels/forecast_model.dart';
-import 'package:movies_app/features/weather/data/models/subModels/location_model.dart';
+import 'package:movies_app/features/weather/domain/entities/forecast_entity.dart';
+import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
 
 import '../../../../core/constants/images.dart';
 
@@ -21,8 +21,8 @@ class ShowData extends StatelessWidget {
     required this.location,
     required this.forecast,
   });
-  final LocationModel location;
-  final ForecastModel forecast;
+  final LocationEntity location;
+  final ForecastEntity forecast;
   late String currentTimeCondition;
   late String currentTimeConditionLogo;
 

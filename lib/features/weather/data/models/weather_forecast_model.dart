@@ -19,7 +19,9 @@ class WeatherForecastModel extends WeatherForecastEntity {
     required this.current,
     required this.forecast,
   }) : super(
+          location: location,
           current: current,
+          forecast: forecast,
         );
 
   factory WeatherForecastModel.fromJson(Map<String, dynamic> json) =>

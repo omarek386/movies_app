@@ -1,8 +1,8 @@
-import '../../data/models/subModels/condition_model.dart';
+import 'package:movies_app/features/weather/domain/entities/condition_entity.dart';
 
 class CurrentEntities {
   final double tempC;
-  final ConditionModel condition;
+  final ConditionEntity condition;
   final int humidity;
   final int cloud;
 

@@ -1,8 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
 part 'location_model.g.dart';
 
 @JsonSerializable()
-class LocationModel {
+class LocationModel extends LocationEntity {
   @JsonKey(name: "name")
   final String name;
   @JsonKey(name: "region")
@@ -29,7 +30,10 @@ class LocationModel {
     required this.tzId,
     required this.localtimeEpoch,
     required this.localtime,
-  });
+  }) : super(
+          name: name,
+          localtime: localtime,
+        );
 
   factory LocationModel.fromJson(Map<String, dynamic> json) =>
       _$LocationModelFromJson(json);

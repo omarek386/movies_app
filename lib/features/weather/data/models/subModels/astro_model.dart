@@ -1,8 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:movies_app/features/weather/domain/entities/astro_entity.dart';
 part 'astro_model.g.dart';
 
 @JsonSerializable()
-class AstroModel {
+class AstroModel extends AstroEntity {
   @JsonKey(name: "sunrise")
   final String sunrise;
   @JsonKey(name: "sunset")
@@ -29,7 +30,10 @@ class AstroModel {
     required this.moonIllumination,
     required this.isMoonUp,
     required this.isSunUp,
-  });
+  }) : super(
+          sunrise: sunrise,
+          sunset: sunset,
+        );
 
   factory AstroModel.fromJson(Map<String, dynamic> json) =>
       _$AstroModelFromJson(json);

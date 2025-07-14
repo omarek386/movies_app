@@ -1,9 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:movies_app/features/weather/data/models/subModels/condition_model.dart';
+import 'package:movies_app/features/weather/domain/entities/day_entity.dart';
 part 'day_model.g.dart';
 
 @JsonSerializable()
-class DayModel {
+class DayModel extends DayEntity {
   @JsonKey(name: "maxtemp_c")
   final double maxtempC;
   @JsonKey(name: "maxtemp_f")
@@ -66,7 +67,13 @@ class DayModel {
     required this.dailyChanceOfSnow,
     required this.condition,
     required this.uv,
-  });
+  }) : super(
+          avgtempC: avgtempC,
+          mintempC: mintempC,
+          maxtempC: maxtempC,
+          dailyWillItRain: dailyWillItRain,
+          condition: condition,
+        );
 
   factory DayModel.fromJson(Map<String, dynamic> json) =>
       _$DayModelFromJson(json);

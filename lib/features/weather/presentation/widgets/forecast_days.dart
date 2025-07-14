@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:movies_app/features/weather/data/models/subModels/forecast_model.dart';
+import 'package:movies_app/features/weather/domain/entities/forecast_entity.dart';
 import 'my_container.dart';
 
 class ForecastDays extends StatelessWidget {
@@ -10,7 +10,7 @@ class ForecastDays extends StatelessWidget {
     required this.forecast,
   });
 
-  final ForecastModel forecast;
+  final ForecastEntity forecast;
 
   @override
   Widget build(BuildContext context) {
