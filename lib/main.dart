@@ -6,7 +6,7 @@ import 'package:movies_app/core/services/service_locator.dart';
 import 'core/constants/app_constants.dart';
 import 'core/cubit/locale/locale_cubit.dart';
 import 'core/cubit/theme/theme_cubit.dart';
-import 'core/utils/app_shared_preferences.dart';
+// import 'core/utils/app_shared_preferences.dart';
 import 'core/routing/app_router.dart';
 import 'app.dart';
 import 'app_bloc_observer.dart';
@@ -24,7 +24,7 @@ void main() async {
   Bloc.observer = AppBlocObserver();
 
   // Initialize shared preferences asynchronously
-  await AppPreferences().init();
+  // await AppPreferences().init();
 
   // Initialize service locator
   setup();

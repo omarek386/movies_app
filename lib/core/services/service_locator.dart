@@ -9,7 +9,12 @@ import 'package:movies_app/features/auth/data/datasources/firebase_auth_datasour
 import 'package:movies_app/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:movies_app/features/auth/domain/repositories/auth_repository.dart';
 import 'package:movies_app/features/weather/data/datasources/remote/weather_remote_datasource.dart';
+import 'package:movies_app/features/weather/data/repositories/location_permission_repository_impl.dart';
+import 'package:movies_app/features/weather/domain/repositories/location_permission_repository.dart';
+import 'package:movies_app/features/weather/domain/usecases/check_location_permission_usecase.dart';
 import 'package:movies_app/features/weather/domain/usecases/get_weather_forecast.dart';
+import 'package:movies_app/features/weather/domain/usecases/open_app_settings_usecase.dart';
+import 'package:movies_app/features/weather/domain/usecases/request_location_permission_usecase.dart';
 
 import '../../features/auth/domain/usecases/register_usecase.dart';
 import '../../features/auth/domain/usecases/reset_password_usecase.dart';
@@ -45,8 +50,13 @@ void setup() {
   // Weather
   sl.registerLazySingleton(() => GetWeatherForecastUseCase(sl()));
   sl.registerLazySingleton(() => GetAutoCompleteSuggestionsUseCase(sl()));
+  sl.registerLazySingleton(() => CheckLocationPermissionUseCase(sl()));
+  sl.registerLazySingleton(() => RequestLocationPermissionUseCase(sl()));
+  sl.registerLazySingleton(() => OpenAppSettingsUseCase(sl()));
   sl.registerLazySingleton<WeatherRepository>(
       () => WeatherRepositoryImpl(sl()));
+  sl.registerLazySingleton<LocationPermissionRepository>(
+      () => LocationPermissionRepositoryImpl());
   sl.registerLazySingleton<WeatherDataSource>(
       () => WeatherRemoteDatasource(sl()));
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(client: sl()));

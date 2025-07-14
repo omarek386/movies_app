@@ -1,5 +1,6 @@
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:movies_app/core/errors/exceptions.dart';
 
 class Geolocation {
   static Future<Position> getCurrentPosition() async {
@@ -8,18 +9,19 @@ class Geolocation {
     Position position;
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      return Future.error('Location services are disabled.');
+      throw const ServerException('Location services are disabled.', 506);
     } else {
       permission = await Geolocator.checkPermission();
       if (permission == LocationPermission.denied ||
           permission == LocationPermission.deniedForever) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.deniedForever) {
-          return Future.error(
-              'Location permissions are permanently denied, we cannot request permissions.');
+          throw const ServerException(
+              'Location permissions are permanently denied, we cannot request permissions.',
+              505);
         }
         if (permission == LocationPermission.denied) {
-          return Future.error('Location permissions are denied');
+          throw const ServerException('Location permissions are denied', 505);
         }
       }
     }
@@ -33,18 +35,19 @@ class Geolocation {
     Position? position;
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      return Future.error('Location services are disabled.');
+      throw const ServerException('Location services are disabled.', 506);
     } else {
       permission = await Geolocator.checkPermission();
       if (permission == LocationPermission.denied ||
           permission == LocationPermission.deniedForever) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.deniedForever) {
-          return Future.error(
-              'Location permissions are permanently denied, we cannot request permissions.');
+          throw const ServerException(
+              'Location permissions are permanently denied, we cannot request permissions.',
+              505);
         }
         if (permission == LocationPermission.denied) {
-          return Future.error('Location permissions are denied');
+          throw const ServerException('Location permissions are denied', 505);
         }
       }
     }

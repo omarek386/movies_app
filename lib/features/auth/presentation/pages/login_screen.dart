@@ -37,6 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
+          if (state is AuthInitial) {
+            context.read<AuthCubit>().requestPermission();
+          }
           if (state is AuthFailure) {
             StylishDialog(
               context: context,

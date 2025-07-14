@@ -32,7 +32,6 @@ class WeatherRepositoryImpl implements WeatherRepository {
   SingleDataResponse<WeatherForecastModel> getWeatherForecast(
       String? location) async {
     try {
-      // final position =  await Geolocation.getCurrentPosition();
       if (location == null || location.isEmpty) {
         final position = await Geolocation.getCurrentPosition();
         location = '${position.latitude},${position.longitude}';
@@ -41,8 +40,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
           await remoteDataSource.getWeatherForecast(location);
       return Right(weatherForecast);
     } on ServerException catch (e) {
-      return Left(
-          ServerFailure('Failed to get weather forecast: ${e.message}'));
+      return Left(ServerFailure(e.message, e.statusCode));
     } on Exception catch (e) {
       return Left(ServerFailure('Failed to get weather forecast: $e'));
     } on Error catch (e) {
