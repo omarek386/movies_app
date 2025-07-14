@@ -41,10 +41,10 @@ Omar Khalifa
       <img src="https://github.com/user-attachments/assets/e09e3272-86a4-4975-8dad-0db04f8ccdc3" width="200" height="400" alt="Sign Up Screen"/>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/weather-home-screen-link" width="200" height="400" alt="Weather Home Screen"/>
+      <img src="https://github.com/user-attachments/assets/adc9751e-e0bd-4ad5-a5fa-0af007e05c98" width="200" height="400" alt="Weather Home Screen"/>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/weather-search-screen-link" width="200" height="400" alt="Weather Search Screen"/>
+      <img src="https://github.com/user-attachments/assets/5bcccfec-a509-4e9d-8b3e-436e4e65b533" width="200" height="400" alt="Weather Search Screen"/>
     </td>
   </tr>
 </table>
