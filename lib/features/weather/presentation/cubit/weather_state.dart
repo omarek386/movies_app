@@ -31,3 +31,8 @@ class WeatherSuggestionsFailure extends WeatherState {
   final String message;
   WeatherSuggestionsFailure(this.message);
 }
+
+class WeatherSignOutState extends WeatherState {
+  final String message;
+  WeatherSignOutState(this.message);
+}

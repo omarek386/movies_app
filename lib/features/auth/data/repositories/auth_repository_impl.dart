@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:movies_app/core/constants/app_data_types.dart';
+import 'package:movies_app/core/constants/cache_keys.dart';
+import 'package:movies_app/core/utils/app_shared_preferences.dart';
 
+import '../../../../core/services/service_locator.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../datasources/auth_remote_datasource.dart';
 
@@ -17,11 +21,17 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   UserResponse signIn(String email, String password) async {
-    return await remoteDataSource.signIn(email, password);
+    final user = await remoteDataSource.signIn(email, password);
+    if (user.isRight()) {
+      sl<AppPreferences>().setData(
+          CacheKeys.userKey, sl<FirebaseAuth>().currentUser?.displayName);
+    }
+    return user;
   }
 
   @override
   VoidResponse signOut() async {
+    await sl<AppPreferences>().removeData(CacheKeys.userKey);
     return remoteDataSource.signOut();
   }
 

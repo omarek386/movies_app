@@ -35,14 +35,14 @@ class AppRouter {
       case Routes.homeScreen:
         final location = settings.arguments as String?;
         return _createRoute(BlocProvider(
-          create: (context) => WeatherCubit(sl(), sl()),
+          create: (context) => WeatherCubit(sl(), sl(), sl()),
           child: HomeScreen(
             location: location,
           ),
         ));
       case Routes.searchScreen:
         return _createRoute(BlocProvider(
-          create: (context) => WeatherCubit(sl(), sl()),
+          create: (context) => WeatherCubit(sl(), sl(), sl()),
           child: const SearchScreen(),
         ));
 

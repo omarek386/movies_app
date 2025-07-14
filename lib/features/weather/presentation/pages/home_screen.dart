@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies_app/core/extensions/navigation_extensions.dart';
+import '../../../../core/routing/routes.dart';
 import '../cubit/weather_cubit.dart';
 import '../cubit/weather_state.dart';
 import '../widgets/show_data.dart';
@@ -33,6 +35,16 @@ class HomeScreen extends StatelessWidget {
         } else if (state is WeatherLoading) {
           return const Center(
             child: CircularProgressIndicator(),
+          );
+        } else if (state is WeatherSignOutState) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.message)),
+            );
+            context.pushNamed(Routes.authHomeScreen);
+          });
+          return const Center(
+            child: Text('Signing out...'),
           );
         } else {
           return const Center(
