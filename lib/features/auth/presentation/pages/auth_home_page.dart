@@ -3,9 +3,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/extensions/navigation_extensions.dart';
 import 'package:movies_app/core/extensions/sizedbox_extensions.dart';
 import 'package:movies_app/core/routing/routes.dart';
+import 'package:movies_app/core/services/Locatoin/geolocation.dart';
 
-class AuthHomeScreen extends StatelessWidget {
+class AuthHomeScreen extends StatefulWidget {
   const AuthHomeScreen({super.key});
+
+  @override
+  State<AuthHomeScreen> createState() => _AuthHomeScreenState();
+}
+
+class _AuthHomeScreenState extends State<AuthHomeScreen> {
+  @override
+  initState() {
+    super.initState();
+    // Try to get current position but handle errors gracefully
+    _initializeLocation();
+    // Initialize any necessary data or state here
+  }
+
+  Future<void> _initializeLocation() async {
+    try {
+      await Geolocation.getCurrentPosition();
+    } catch (e) {
+      // Silently handle location errors during initialization
+      // The user will be prompted for permission when they actually need location
+      print('Location initialization failed: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

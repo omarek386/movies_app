@@ -6,7 +6,7 @@ import 'package:movies_app/core/services/service_locator.dart';
 import 'core/constants/app_constants.dart';
 import 'core/cubit/locale/locale_cubit.dart';
 import 'core/cubit/theme/theme_cubit.dart';
-import 'core/utils/app_shared_preferences.dart';
+// import 'core/utils/app_shared_preferences.dart';
 import 'core/routing/app_router.dart';
 import 'app.dart';
 import 'app_bloc_observer.dart';
@@ -14,13 +14,21 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase asynchronously
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   await EasyLocalization.ensureInitialized();
   Bloc.observer = AppBlocObserver();
-  await AppPreferences().init();
-  setup(); // Initialize service locator
+
+  // Initialize shared preferences asynchronously
+  // await AppPreferences().init();
+
+  // Initialize service locator
+  setup();
+
   runApp(EasyLocalization(
     supportedLocales: AppConstants.supportedLocales,
     path: 'assets/lang',

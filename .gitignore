@@ -48,4 +48,4 @@ app.*.map.json
 # Regenerate it using `flutterfire configure` if missing.
 # Do not remove if your CI/CD pipeline requires this file at runtime.
 lib/firebase_options.dart
-
+lib/core/constants/api_keys.dart
