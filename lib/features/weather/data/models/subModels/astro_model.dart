@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/weather/domain/entities/astro_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/astro_entity.dart';
 part 'astro_model.g.dart';
 
 @JsonSerializable()

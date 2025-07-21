@@ -1,4 +1,4 @@
-import 'package:movies_app/features/weather/domain/entities/condition_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/condition_entity.dart';
 
 class CurrentEntities {
   final double tempC;

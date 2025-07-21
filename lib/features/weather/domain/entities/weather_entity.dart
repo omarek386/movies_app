@@ -1,6 +1,6 @@
-import 'package:movies_app/features/weather/domain/entities/current_entities.dart';
-import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
-import 'package:movies_app/features/weather/domain/entities/forecast_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/current_entities.dart';
+import 'package:weather_app/features/weather/domain/entities/location_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/forecast_entity.dart';
 
 class WeatherForecastEntity {
   final LocationEntity location;

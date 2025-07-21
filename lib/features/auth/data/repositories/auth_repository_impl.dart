@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:movies_app/core/constants/app_data_types.dart';
-import 'package:movies_app/core/constants/cache_keys.dart';
-import 'package:movies_app/core/utils/app_shared_preferences.dart';
+import 'package:weather_app/core/constants/app_data_types.dart';
+import 'package:weather_app/core/constants/cache_keys.dart';
+import 'package:weather_app/core/utils/app_shared_preferences.dart';
 
 import '../../../../core/services/service_locator.dart';
 import '../../domain/repositories/auth_repository.dart';

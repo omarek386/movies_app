@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/weather/data/models/subModels/condition_model.dart';
-import 'package:movies_app/features/weather/domain/entities/day_entity.dart';
+import 'package:weather_app/features/weather/data/models/subModels/condition_model.dart';
+import 'package:weather_app/features/weather/domain/entities/day_entity.dart';
 part 'day_model.g.dart';
 
 @JsonSerializable()

@@ -1,6 +1,6 @@
-import 'package:movies_app/core/errors/exceptions.dart';
-import 'package:movies_app/core/network/api_consumer.dart';
-import 'package:movies_app/features/weather/data/models/ai_prams_model.dart';
+import 'package:weather_app/core/errors/exceptions.dart';
+import 'package:weather_app/core/network/api_consumer.dart';
+import 'package:weather_app/features/weather/data/models/ai_prams_model.dart';
 
 import '../../../../../core/constants/endpoint_constants.dart';
 

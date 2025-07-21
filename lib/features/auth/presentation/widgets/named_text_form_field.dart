@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/core/extensions/sizedbox_extensions.dart';
-import 'package:movies_app/features/auth/presentation/validators/email_validator.dart';
+import 'package:weather_app/core/extensions/sizedbox_extensions.dart';
+import 'package:weather_app/features/auth/presentation/validators/email_validator.dart';
 
 class NamedTextFormField extends StatelessWidget {
   const NamedTextFormField({

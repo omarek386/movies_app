@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/core/extensions/navigation_extensions.dart';
-import 'package:movies_app/core/extensions/sizedbox_extensions.dart';
-import 'package:movies_app/core/routing/routes.dart';
-import 'package:movies_app/core/services/Locatoin/geolocation.dart';
+import 'package:weather_app/core/extensions/navigation_extensions.dart';
+import 'package:weather_app/core/extensions/sizedbox_extensions.dart';
+import 'package:weather_app/core/routing/routes.dart';
+import 'package:weather_app/core/services/Locatoin/geolocation.dart';
 
 class AuthHomeScreen extends StatefulWidget {
   const AuthHomeScreen({super.key});

@@ -1,6 +1,6 @@
-import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
-import 'package:movies_app/features/weather/domain/entities/permission_entity.dart';
-import 'package:movies_app/features/weather/domain/entities/weather_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/location_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/permission_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/weather_entity.dart';
 
 import '../../data/models/suggestions.dart';
 

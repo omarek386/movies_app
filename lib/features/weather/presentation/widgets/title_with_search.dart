@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/core/extensions/navigation_extensions.dart';
-import 'package:movies_app/core/services/service_locator.dart';
+import 'package:weather_app/core/extensions/navigation_extensions.dart';
+import 'package:weather_app/core/services/service_locator.dart';
 
 import '../../../../core/constants/cache_keys.dart';
 import '../../../../core/routing/routes.dart';

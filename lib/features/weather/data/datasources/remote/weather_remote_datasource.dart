@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:movies_app/core/errors/exceptions.dart';
-import 'package:movies_app/features/weather/data/models/auto_complete.dart';
-import 'package:movies_app/features/weather/data/models/suggestions.dart';
-import 'package:movies_app/features/weather/data/models/weather_forecast_model.dart';
+import 'package:weather_app/core/errors/exceptions.dart';
+import 'package:weather_app/features/weather/data/models/auto_complete.dart';
+import 'package:weather_app/features/weather/data/models/suggestions.dart';
+import 'package:weather_app/features/weather/data/models/weather_forecast_model.dart';
 
 import '../../../../../core/constants/api_keys.dart';
 import '../../../../../core/constants/endpoint_constants.dart';

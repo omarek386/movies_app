@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:movies_app/features/weather/domain/entities/forecast_entity.dart';
-import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
-import 'package:movies_app/features/weather/presentation/widgets/ai_widget.dart';
+import 'package:weather_app/features/weather/domain/entities/forecast_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/location_entity.dart';
+import 'package:weather_app/features/weather/presentation/widgets/ai_widget.dart';
 
 import '../../../../core/constants/images.dart';
 

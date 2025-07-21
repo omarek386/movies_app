@@ -1,5 +1,5 @@
-import 'package:movies_app/core/utils/app_data_types.dart';
-import 'package:movies_app/features/weather/data/models/weather_forecast_model.dart';
+import 'package:weather_app/core/utils/app_data_types.dart';
+import 'package:weather_app/features/weather/data/models/weather_forecast_model.dart';
 
 import '../../data/models/suggestions.dart';
 

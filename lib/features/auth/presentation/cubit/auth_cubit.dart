@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies_app/features/auth/domain/usecases/register_usecase.dart';
+import 'package:weather_app/features/auth/domain/usecases/register_usecase.dart';
 import '../../../../core/services/Locatoin/geolocation.dart';
 import '../../domain/usecases/reset_password_usecase.dart';
 import '../../domain/usecases/sign_in_usecase.dart';

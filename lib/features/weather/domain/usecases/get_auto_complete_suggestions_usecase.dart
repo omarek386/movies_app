@@ -1,4 +1,4 @@
-import 'package:movies_app/core/utils/app_data_types.dart';
+import 'package:weather_app/core/utils/app_data_types.dart';
 
 import '../../data/models/suggestions.dart';
 import '../repositories/weather_repository.dart';

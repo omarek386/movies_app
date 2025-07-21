@@ -1,6 +1,6 @@
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:movies_app/core/errors/exceptions.dart';
+import 'package:weather_app/core/errors/exceptions.dart';
 
 class Geolocation {
   static Future<Position> getCurrentPosition() async {

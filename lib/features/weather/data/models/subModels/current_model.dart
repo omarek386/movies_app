@@ -1,7 +1,7 @@
 // ignore_for_file: annotate_overrides, overridden_fields
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/weather/data/models/subModels/condition_model.dart';
+import 'package:weather_app/features/weather/data/models/subModels/condition_model.dart';
 
 import '../../../domain/entities/current_entities.dart';
 part 'current_model.g.dart';

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:movies_app/core/errors/failures.dart';
-import 'package:movies_app/core/utils/app_data_types.dart';
-import 'package:movies_app/features/weather/data/models/ai_prams_model.dart';
-import 'package:movies_app/features/weather/domain/repositories/ai_repository.dart';
-import 'package:movies_app/features/weather/domain/repositories/weather_repository.dart';
+import 'package:weather_app/core/errors/failures.dart';
+import 'package:weather_app/core/utils/app_data_types.dart';
+import 'package:weather_app/features/weather/data/models/ai_prams_model.dart';
+import 'package:weather_app/features/weather/domain/repositories/ai_repository.dart';
+import 'package:weather_app/features/weather/domain/repositories/weather_repository.dart';
 
 import '../datasources/remote/ai_remote_datasource.dart';
 import '../models/weather_forecast_model.dart';

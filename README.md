@@ -1,6 +1,83 @@
-# Movies App with Weather Integration 🎬🌤️
+# Weather App with AI Prediction ️🤖
 
-A comprehensive Flutter application built with Clean Architecture featuring user authentication and real-time weather information. Originally designed as a movie discovery app, this project has evolved to showcase modern Flutter development practices including state management, internationalization, Firebase integration, weather API integration, geolocation services, and responsive design.
+A comprehensive Flutter weather application built with Clean Architecture featuring user authentication, real-time weather information, and AI-powered weather predictions. This modern weather app showcases advanced Flutter development practices including state management, internationalization, Firebase integration, weather API integration, geolocation services, machine learning integration, and responsive design.
+
+## 👨‍💻 Author
+
+Omar Khalifa
+
+- Project Owner & Lead Developer
+- Flutter & Mobile App Development Specialist
+
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <th align="center">Splash Screen</th>
+    <th align="center">Onboarding</th>
+    <th align="center">Login Screen</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/splash-screen-link" width="200" height="400" alt="Splash Screen"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/43e11c26-da9a-4572-b96f-2f6e151f5e01" width="200" height="400" alt="Onboarding"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/c51b2be4-5859-491e-a9c0-413e3074d860" width="200" height="400" alt="Login Screen"/>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th align="center">Sign Up Screen</th>
+    <th align="center">Weather Home</th>
+    <th align="center">Weather Search</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e09e3272-86a4-4975-8dad-0db04f8ccdc3" width="200" height="400" alt="Sign Up Screen"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/adc9751e-e0bd-4ad5-a5fa-0af007e05c98" width="200" height="400" alt="Weather Home Screen"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/5bcccfec-a509-4e9d-8b3e-436e4e65b533" width="200" height="400" alt="Weather Search Screen"/>
+    </td>
+  </tr>
+</table>
+
+> **Note**: Weather screen screenshots will be updated with actual app screenshots. The current app features a comprehensive weather interface with real-time data, 3-day forecasts, and location-based weather detection.
+
+## ✨ Features
+
+- **🔐 Authentication System**:
+
+  - User registration with email verification
+  - Secure login/logout functionality
+  - Firebase Auth integration
+  - Form validation and error handling
+
+- **☁️ Weather Integration**:
+
+  - Real-time weather forecasting with 3-day forecasts
+  - Location-based weather detection using GPS
+  - City/country search with auto-complete suggestions
+  - Weather data visualization with dynamic backgrounds
+  - Sunrise/sunset times and astronomical data
+  - Temperature, humidity, wind speed, and precipitation data
+  - Day/night theme adaptation based on local time
+
+- **🤖 AI Weather Prediction**:
+  - Machine Learning integration with Flask backend
+  - RandomForest classifier for weather pattern prediction
+  - Real-time AI predictions based on current weather conditions
+  - Weather condition classification (Rainy, Sunny, Hot, Mild, Normal)
+  - Intelligent weather parameter extraction from meteorological data
+  - RESTful API integration with custom ML model
+  - Scikit-learn based predictive analyticsrehensive Flutter application built with Clean Architecture featuring user authentication, real-time weather information, and AI-powered weather predictions. Originally designed as a movie discovery app, this project has evolved to showcase modern Flutter development practices including state management, internationalization, Firebase integration, weather API integration, geolocation services, machine learning integration, and responsive design.
 
 ## 👨‍💻 Author
 
@@ -110,7 +187,7 @@ Omar Khalifa
 This project follows **Clean Architecture** principles with the following structure:
 
 ```text
-movies_app/
+weather_app/
 ├── lib/
 │   ├── core/                    # Shared functionality
 │   │   ├── constants/          # App constants and configurations
@@ -184,6 +261,16 @@ movies_app/
 - **Weather API**: Real-time weather data and forecasting
 - **Location Permissions**: Handle location access permissions
 
+### AI & Machine Learning Backend
+
+- **Flask**: Python web framework for ML API server
+- **scikit-learn**: Machine learning library with RandomForest classifier
+- **NumPy**: Numerical computing for data processing
+- **Pickle**: Model serialization and deserialization
+- **Pandas**: Data manipulation and analysis (if needed)
+- **Python 3.13+**: Backend runtime environment
+- **RESTful API**: HTTP-based communication between Flutter and ML backend
+
 ### UI & Animation
 
 - **Flutter ScreenUtil**: Responsive screen adaptation
@@ -225,7 +312,7 @@ movies_app/
 
    ```bash
    git clone <repository-url>
-   cd movies_app
+   cd weather_app
    ```
 
 2. **Install dependencies**
@@ -263,7 +350,55 @@ movies_app/
    - **Android**: Location permissions are already configured in `android/app/src/main/AndroidManifest.xml`
    - **iOS**: Location permissions are configured in `ios/Runner/Info.plist`
 
-7. **Run the app**
+7. **Set up AI/ML Backend (Optional)**
+
+   The app includes AI weather prediction capabilities. To enable this feature:
+
+   - **Python Environment Setup**:
+
+     ```bash
+     # Navigate to project root
+     cd weather_app
+
+     # Create virtual environment
+     python -m venv .venv
+
+     # Activate virtual environment
+     # Windows
+     .venv\Scripts\activate
+     # macOS/Linux
+     source .venv/bin/activate
+
+     # Install dependencies
+     pip install flask scikit-learn numpy requests
+     ```
+
+   - **Start the ML API Server**:
+
+     ```bash
+     # Run the startup script (recommended)
+     python start_server.py
+
+     # Or run directly
+     python app.py
+     ```
+
+   - **Test the API**:
+
+     ```bash
+     # Test the ML prediction endpoint
+     python test_api_client.py
+
+     # Or test manually
+     curl -X POST http://localhost:5001/predict -H "Content-Type: application/json" -d '{"features": [0, 1, 1, 0, 0]}'
+     ```
+
+   - **Configure Flutter App**:
+     - The app is configured to connect to `http://10.0.2.2:5001` (Android emulator)
+     - For physical devices, update the endpoint in your AI data source to your machine's IP address
+     - The ML model will be automatically created if not present
+
+8. **Run the app**
 
    ```bash
    flutter run
@@ -291,6 +426,45 @@ The weather feature uses [WeatherAPI.com](https://www.weatherapi.com/) for real-
    - Location search with autocomplete
    - Historical weather data (limited)
 
+## 🤖 AI Weather Prediction System
+
+The app features an intelligent weather prediction system that analyzes current weather conditions and predicts weather patterns:
+
+### How It Works
+
+1. **Data Collection**: The app extracts weather parameters from the WeatherAPI response
+2. **Feature Engineering**: Weather data is processed into 5 binary features:
+
+   - `isRainy`: Precipitation likelihood (>0.1mm or >50% chance)
+   - `isSunny`: Clear/sunny conditions with low cloud cover
+   - `isHot`: Temperature above 30°C/86°F
+   - `isMild`: Comfortable temperature range (18-28°C)
+   - `isNormal`: Balanced, non-extreme conditions
+
+3. **ML Prediction**: A RandomForest classifier processes these features to make predictions
+4. **Real-time Integration**: Predictions are made automatically when weather data is fetched
+
+### Model Features
+
+- **Algorithm**: RandomForest Classifier (sklearn)
+- **Input Features**: 5 binary weather condition indicators
+- **Training**: Auto-generated synthetic weather patterns
+- **Deployment**: Flask REST API with automatic model creation
+- **Error Handling**: Comprehensive error handling with model recreation
+- **Compatibility**: Automatic scikit-learn version compatibility management
+
+### API Endpoints
+
+- `GET /`: Welcome message
+- `GET /test`: Health check and model status
+- `GET /predict/help`: API usage documentation
+- `POST /predict`: Weather prediction endpoint
+  ```json
+  {
+    "features": [0, 1, 1, 0, 0] // [isRainy, isSunny, isHot, isMild, isNormal]
+  }
+  ```
+
 ## 📱 Supported Platforms
 
 - ✅ Android
@@ -313,14 +487,7 @@ Language files are located in `assets/lang/` directory.
 
 The app includes both light and dark themes with dynamic theme switching functionality.
 
-## �‍💻 Author
-
-**Omar Khalifa**
-
-- Project Owner & Lead Developer
-- Flutter & Mobile App Development
-
-## �📄 License
+## 📄 License
 
 This project is created and owned by Omar Khalifa. It serves as a demonstration of Flutter Clean Architecture and modern mobile development practices.
 

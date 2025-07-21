@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/features/weather/presentation/widgets/my_container.dart';
+import 'package:weather_app/features/weather/presentation/widgets/my_container.dart';
 
 class AiWidget extends StatelessWidget {
   const AiWidget({

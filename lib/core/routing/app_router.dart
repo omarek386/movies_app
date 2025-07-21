@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies_app/core/services/service_locator.dart';
-import 'package:movies_app/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:movies_app/features/auth/presentation/pages/auth_home_page.dart';
-import 'package:movies_app/features/weather/presentation/cubit/weather_cubit.dart';
-import 'package:movies_app/features/weather/presentation/pages/home_screen.dart';
+import 'package:weather_app/core/services/service_locator.dart';
+import 'package:weather_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:weather_app/features/auth/presentation/pages/auth_home_page.dart';
+import 'package:weather_app/features/weather/presentation/cubit/weather_cubit.dart';
+import 'package:weather_app/features/weather/presentation/pages/home_screen.dart';
 import '../../features/auth/presentation/pages/login_screen.dart';
 import '../../features/auth/presentation/pages/sign_up_screen.dart';
 import '../../features/weather/presentation/pages/search_screen.dart';
