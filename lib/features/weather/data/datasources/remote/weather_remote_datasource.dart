@@ -17,7 +17,7 @@ class WeatherRemoteDatasource implements WeatherDataSource {
   Future<WeatherForecastModel> getWeatherForecast(String location) async {
     try {
       final response = await apiConsumer.get(
-        EndpointConstants.forecast,
+        EndpointConstants.weatherBaseUrl + EndpointConstants.forecast,
         queryParameters: {
           'q': location,
           'days': 3,
@@ -38,7 +38,7 @@ class WeatherRemoteDatasource implements WeatherDataSource {
   Future<List<Suggestions>> autoCompleteSearch(String? query) async {
     try {
       final response = await apiConsumer.get(
-        EndpointConstants.autoCompleteSearch,
+        EndpointConstants.weatherBaseUrl + EndpointConstants.autoCompleteSearch,
         queryParameters: {
           'q': query,
           'key': ApiKeys.weatherApiKey,

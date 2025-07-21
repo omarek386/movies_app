@@ -1,10 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/features/auth/domain/usecases/sign_out_usecase.dart';
 import 'package:movies_app/features/weather/domain/usecases/check_location_permission_usecase.dart';
+import 'package:movies_app/features/weather/domain/usecases/get_ai_predict_usecase.dart';
 import 'package:movies_app/features/weather/domain/usecases/get_auto_complete_suggestions_usecase.dart';
 import 'package:movies_app/features/weather/domain/usecases/get_weather_forecast.dart';
 import 'package:movies_app/features/weather/domain/usecases/open_app_settings_usecase.dart';
 import 'package:movies_app/features/weather/domain/usecases/request_location_permission_usecase.dart';
+import '../../data/models/weather_forecast_model.dart';
 import 'weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
@@ -15,6 +17,7 @@ class WeatherCubit extends Cubit<WeatherState> {
     this._checkLocationPermissionUseCase,
     this._requestLocationPermissionUseCase,
     this._openAppSettingsUseCase,
+    this._getAiPredictUsecase,
   ) : super(WeatherInitial());
 
   final GetWeatherForecastUseCase _getWeatherForecastUseCase;
@@ -23,13 +26,27 @@ class WeatherCubit extends Cubit<WeatherState> {
   final CheckLocationPermissionUseCase _checkLocationPermissionUseCase;
   final RequestLocationPermissionUseCase _requestLocationPermissionUseCase;
   final OpenAppSettingsUseCase _openAppSettingsUseCase;
+  final GetAiPredictUsecase _getAiPredictUsecase;
 
   Future<void> fetchWeatherForecast(String? location) async {
     emit(WeatherLoading());
     final response = await _getWeatherForecastUseCase(location);
     response.fold(
       (failure) => emit(WeatherFailure(failure.message, failure.statusCode)),
-      (forecast) => emit(WeatherSuccess(forecast, forecast.location)),
+      (forecast) {
+        emit(WeatherSuccess(forecast, forecast.location));
+        fetchAiPrediction(forecast);
+      },
+    );
+  }
+
+  Future<void> fetchAiPrediction(WeatherForecastModel weatherForecast) async {
+    emit(WeatherLoading());
+    final response = await _getAiPredictUsecase(weatherForecast);
+    response.fold(
+      (failure) => emit(WeatherFailure(failure.message, failure.statusCode)),
+      (prediction) => emit(WeatherSuccess(
+          weatherForecast, weatherForecast.location, prediction[0])),
     );
   }
 

@@ -30,6 +30,7 @@ class HomeScreen extends StatelessWidget {
           return ShowData(
             location: state.location,
             forecast: state.forecast.forecast,
+            aiPrediction: state.aiPrediction,
           );
         } else if (state is WeatherPermissionRequired) {
           return Padding(

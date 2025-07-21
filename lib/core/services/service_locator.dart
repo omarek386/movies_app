@@ -21,10 +21,14 @@ import '../../features/auth/domain/usecases/reset_password_usecase.dart';
 import '../../features/auth/domain/usecases/sign_in_usecase.dart';
 import '../../features/auth/domain/usecases/sign_out_usecase.dart';
 import '../../features/auth/domain/usecases/verify_email_usecase.dart';
+import '../../features/weather/data/datasources/remote/ai_remote_datasource.dart';
 import '../../features/weather/data/datasources/weather_remote_datasource.dart';
 import '../../features/weather/data/repositories/weather_repository_impl.dart';
 import '../../features/weather/domain/repositories/weather_repository.dart';
 import '../../features/weather/domain/usecases/get_auto_complete_suggestions_usecase.dart';
+import '../../features/weather/domain/usecases/get_ai_predict_usecase.dart';
+import '../../features/weather/data/repositories/ai_repository_impl.dart';
+import '../../features/weather/domain/repositories/ai_repository.dart';
 
 final sl = GetIt.instance;
 
@@ -61,4 +65,12 @@ void setup() {
       () => WeatherRemoteDatasource(sl()));
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(client: sl()));
   sl.registerLazySingleton<Dio>(() => Dio());
+
+  // AI Repository
+  sl.registerLazySingleton<AIRepository>(
+    () => AIRepositoryImpl(sl(), sl()),
+  );
+  sl.registerLazySingleton<AiRemoteDatasource>(() => AiRemoteDatasource(sl()));
+  // AI Use Cases
+  sl.registerLazySingleton(() => GetAiPredictUsecase(sl<AIRepository>()));
 }

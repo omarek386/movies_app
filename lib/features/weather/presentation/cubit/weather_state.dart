@@ -13,7 +13,8 @@ class WeatherLoading extends WeatherState {}
 class WeatherSuccess extends WeatherState {
   final WeatherForecastEntity forecast;
   final LocationEntity location;
-  WeatherSuccess(this.forecast, this.location);
+  final int? aiPrediction;
+  WeatherSuccess(this.forecast, this.location, [this.aiPrediction]);
 }
 
 class WeatherFailure extends WeatherState {
