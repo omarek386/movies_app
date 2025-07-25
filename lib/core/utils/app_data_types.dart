@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:movies_app/core/errors/failures.dart';
+import 'package:weather_app/core/errors/failures.dart';
 
 typedef ListOfDataResponse<T> = Future<Either<Failure, List<T>>>;
 typedef SingleDataResponse<T> = Future<Either<Failure, T>>;

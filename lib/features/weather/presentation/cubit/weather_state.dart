@@ -1,6 +1,6 @@
-import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
-import 'package:movies_app/features/weather/domain/entities/permission_entity.dart';
-import 'package:movies_app/features/weather/domain/entities/weather_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/location_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/permission_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/weather_entity.dart';
 
 import '../../data/models/suggestions.dart';
 
@@ -13,7 +13,8 @@ class WeatherLoading extends WeatherState {}
 class WeatherSuccess extends WeatherState {
   final WeatherForecastEntity forecast;
   final LocationEntity location;
-  WeatherSuccess(this.forecast, this.location);
+  final int? aiPrediction;
+  WeatherSuccess(this.forecast, this.location, [this.aiPrediction]);
 }
 
 class WeatherFailure extends WeatherState {

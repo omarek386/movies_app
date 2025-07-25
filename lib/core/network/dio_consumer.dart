@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../constants/endpoint_constants.dart';
+// import '../constants/endpoint_constants.dart';
 import 'api_consumer.dart';
 import 'interceptors.dart';
 // import 'status_code.dart';
@@ -9,12 +9,20 @@ class DioConsumer implements ApiConsumer {
 
   DioConsumer({required this.client}) {
     client.options
-      ..baseUrl = EndpointConstants.baseUrl
+      // ..baseUrl = EndpointConstants.baseUrl
       ..responseType = ResponseType.json
       ..connectTimeout = const Duration(seconds: 15)
       ..receiveTimeout = const Duration(seconds: 15);
 
-    client.interceptors.add(AppInterceptors());
+    client.interceptors.add(
+      AppInterceptors(),
+    );
+    client.interceptors.add(LogInterceptor(
+      request: true,
+      responseBody: true,
+      requestBody: true,
+      error: true,
+    ));
   }
 
   @override

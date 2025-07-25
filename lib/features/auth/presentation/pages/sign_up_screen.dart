@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:movies_app/core/extensions/navigation_extensions.dart';
-import 'package:movies_app/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:movies_app/features/auth/presentation/widgets/named_text_form_field.dart';
-import 'package:movies_app/features/auth/presentation/widgets/secure_named_text_form_field.dart';
+import 'package:weather_app/core/extensions/navigation_extensions.dart';
+import 'package:weather_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:weather_app/features/auth/presentation/widgets/named_text_form_field.dart';
+import 'package:weather_app/features/auth/presentation/widgets/secure_named_text_form_field.dart';
 import 'package:stylish_dialog/stylish_dialog.dart';
 
 import '../../../../core/extensions/sizedbox_extensions.dart';

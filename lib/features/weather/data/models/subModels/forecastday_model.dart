@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/weather/data/models/subModels/astro_model.dart';
-import 'package:movies_app/features/weather/data/models/subModels/current_model.dart';
-import 'package:movies_app/features/weather/data/models/subModels/day_model.dart';
-import 'package:movies_app/features/weather/domain/entities/forecastday_entity.dart';
+import 'package:weather_app/features/weather/data/models/subModels/astro_model.dart';
+import 'package:weather_app/features/weather/data/models/subModels/current_model.dart';
+import 'package:weather_app/features/weather/data/models/subModels/day_model.dart';
+import 'package:weather_app/features/weather/domain/entities/forecastday_entity.dart';
 part 'forecastday_model.g.dart';
 
 @JsonSerializable()

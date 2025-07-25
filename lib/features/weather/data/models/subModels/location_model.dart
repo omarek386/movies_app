@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/location_entity.dart';
 part 'location_model.g.dart';
 
 @JsonSerializable()

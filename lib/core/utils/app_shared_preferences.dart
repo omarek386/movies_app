@@ -1,4 +1,4 @@
-import 'package:movies_app/core/constants/cache_keys.dart';
+import 'package:weather_app/core/constants/cache_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 

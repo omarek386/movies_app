@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:movies_app/core/errors/exceptions.dart';
-import 'package:movies_app/core/services/Locatoin/geolocation.dart';
-import 'package:movies_app/core/utils/app_data_types.dart';
-import 'package:movies_app/features/weather/data/models/suggestions.dart';
+import 'package:weather_app/core/errors/exceptions.dart';
+import 'package:weather_app/core/services/Locatoin/geolocation.dart';
+import 'package:weather_app/core/utils/app_data_types.dart';
+import 'package:weather_app/features/weather/data/models/suggestions.dart';
 
-import 'package:movies_app/features/weather/data/models/weather_forecast_model.dart';
+import 'package:weather_app/features/weather/data/models/weather_forecast_model.dart';
 
 import '../../../../core/errors/failures.dart';
 import '../../domain/repositories/weather_repository.dart';

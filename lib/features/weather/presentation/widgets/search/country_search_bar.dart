@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies_app/core/extensions/navigation_extensions.dart';
-import 'package:movies_app/core/routing/routes.dart';
+import 'package:weather_app/core/extensions/navigation_extensions.dart';
+import 'package:weather_app/core/routing/routes.dart';
 
 import '../../cubit/weather_cubit.dart';
 

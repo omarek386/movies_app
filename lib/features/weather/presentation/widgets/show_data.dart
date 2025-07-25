@@ -3,8 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:movies_app/features/weather/domain/entities/forecast_entity.dart';
-import 'package:movies_app/features/weather/domain/entities/location_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/forecast_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/location_entity.dart';
+import 'package:weather_app/features/weather/presentation/widgets/ai_widget.dart';
 
 import '../../../../core/constants/images.dart';
 
@@ -20,11 +21,13 @@ class ShowData extends StatelessWidget {
     super.key,
     required this.location,
     required this.forecast,
+    this.aiPrediction,
   });
   final LocationEntity location;
   final ForecastEntity forecast;
   late String currentTimeCondition;
   late String currentTimeConditionLogo;
+  final int? aiPrediction;
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +113,9 @@ class ShowData extends StatelessWidget {
               TodayStatus(forecast: forecast),
               SunRiseBox(forecast: forecast),
               SunSetBox(forecast: forecast),
+              aiPrediction != null
+                  ? AiWidget(aiPrediction: aiPrediction)
+                  : Container(),
               SizedBox(
                 height: 20.h,
               ),

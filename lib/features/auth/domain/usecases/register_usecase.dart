@@ -1,4 +1,4 @@
-import 'package:movies_app/core/constants/app_data_types.dart';
+import 'package:weather_app/core/constants/app_data_types.dart';
 
 import '../repositories/auth_repository.dart';
 

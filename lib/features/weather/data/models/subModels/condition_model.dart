@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/weather/domain/entities/condition_entity.dart';
+import 'package:weather_app/features/weather/domain/entities/condition_entity.dart';
 part 'condition_model.g.dart';
 
 @JsonSerializable()

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:movies_app/core/errors/failures.dart';
+import 'package:weather_app/core/errors/failures.dart';
 
 import '../../../../core/constants/app_data_types.dart';
 import 'auth_remote_datasource.dart';

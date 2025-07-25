@@ -5,8 +5,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/core/extensions/navigation_extensions.dart';
-import 'package:movies_app/core/extensions/sizedbox_extensions.dart';
+import 'package:weather_app/core/extensions/navigation_extensions.dart';
+import 'package:weather_app/core/extensions/sizedbox_extensions.dart';
 import '../../../../core/routing/routes.dart';
 import '../cubit/weather_cubit.dart';
 import '../cubit/weather_state.dart';
@@ -30,6 +30,7 @@ class HomeScreen extends StatelessWidget {
           return ShowData(
             location: state.location,
             forecast: state.forecast.forecast,
+            aiPrediction: state.aiPrediction,
           );
         } else if (state is WeatherPermissionRequired) {
           return Padding(

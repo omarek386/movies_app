@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/weather/data/models/subModels/current_model.dart';
-import 'package:movies_app/features/weather/data/models/subModels/forecast_model.dart';
-import 'package:movies_app/features/weather/data/models/subModels/location_model.dart';
-import 'package:movies_app/features/weather/domain/entities/weather_entity.dart';
+import 'package:weather_app/features/weather/data/models/subModels/current_model.dart';
+import 'package:weather_app/features/weather/data/models/subModels/forecast_model.dart';
+import 'package:weather_app/features/weather/data/models/subModels/location_model.dart';
+import 'package:weather_app/features/weather/domain/entities/weather_entity.dart';
 part 'weather_forecast_model.g.dart';
 
 @JsonSerializable()
